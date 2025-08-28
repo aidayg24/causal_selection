@@ -4,8 +4,8 @@ export default {
   socketUrl: 'wss://magpie-demo.herokuapp.com/socket',
   // this will be used in prolific mode
   completionUrl: 'https://...',
-  contactEmail: 'test@random.com',
+  contactEmail: 'aidarostamiyg24@gmail.com',
   // Either 'debug', 'directLink' or 'prolific'
-  mode: 'debug',
+  mode: 'directLink',
   language: 'en'
 };
