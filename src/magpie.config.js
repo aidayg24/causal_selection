@@ -1,7 +1,7 @@
 export default {
   experimentId: '9',
-  serverUrl: 'https://magpie-demo.herokuapp.com/',
-  socketUrl: 'wss://magpie-demo.herokuapp.com/socket',
+  serverUrl: 'https://causal-selection-experiment.gigalixirapp.com',
+  socketUrl: 'wss://causal-selection-experiment.gigalixirapp.com/socket',
   // this will be used in prolific mode
   completionUrl: 'https://...',
   contactEmail: 'aidarostamiyg24@gmail.com',
