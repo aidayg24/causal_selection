@@ -31,9 +31,9 @@
 <Screen>
   <p>
     Alice and Bob are playing a small game. Both have two cards and they can pick one of them. In the image below you can see the points for each move:<br/>
-    <img src="/images/training/2point.jpg" alt="2 point Rule">
+    <img src="https://aidayg24.github.io/causal_selection/images/training/2point.jpg" alt="2 point Rule">
     <strong>If in the game they played the following: </strong>
-    <img src="/images/training/yellow_tail.jpg" alt="yellow tail game">
+    <img src="https://aidayg24.github.io/causal_selection/images/training/yellow_tail.jpg" alt="yellow tail game">
   </p>
   <ForcedChoiceScreen
         :options="['Alice', 'Bob', 'No one']"
@@ -51,9 +51,9 @@
 <Screen>
   <p>
     Still the same game as previouse one;<br/>
-    <img src="/images/training/2point.jpg" alt="2 point Rule">
+    <img src="https://aidayg24.github.io/causal_selection/images/training/2point.jpg" alt="2 point Rule">
     <strong>If in the game they played the following: </strong>
-    <img src="/images/training/yellow_head.jpg" alt="yellow head game">
+    <img src="https://aidayg24.github.io/causal_selection/images/training/yellow_head.jpg" alt="yellow head game">
   </p>
   <ForcedChoiceScreen
         :options="['Alice', 'Bob', 'No one']"
@@ -71,9 +71,9 @@
 <Screen>
   <p>
     Now, a small change in the rules;<br/>
-    <img src="/images/training/atleast1point.jpg" alt="1 point Rule">
+    <img src="https://aidayg24.github.io/causal_selection/images/training/atleast1point.jpg" alt="1 point Rule">
     <strong>If in the game they played the following: </strong>
-    <img src="/images/training/red_tail.jpg" alt="red tail game">
+    <img src="https://aidayg24.github.io/causal_selection/images/training/red_tail.jpg" alt="red tail game">
   </p>
   <ForcedChoiceScreen
         :options="['Alice', 'Bob', 'No one']"
@@ -116,9 +116,9 @@
   
     <Slide>
         <p>In the following image you can see the rules and the points of each move</p>
-        <img src="/images/main/exactly2.jpg" alt="2 point Rule">
+        <img src="https://aidayg24.github.io/causal_selection/images/main/exactly2.jpg" alt="2 point Rule">
     
-    <img src="/images/main/superpowerWin2.jpg" alt="drunk superpower game">
+    <img src="https://aidayg24.github.io/causal_selection/images/main/superpowerWin2.jpg" alt="drunk superpower game">
 
     <p><strong>How much do you agree with the following statements?</strong></p>
         <p>1. Charlie normally uses his superpower in the games.</p>
@@ -145,9 +145,9 @@
   
     <Slide>
         <p>In the following image you can see the rules and the points of each move</p>
-        <img src="/images/main/exactly2.jpg" alt="2 point Rule">
+        <img src="https://aidayg24.github.io/causal_selection/images/main/exactly2.jpg" alt="2 point Rule">
     
-    <img src="/images/main/drunkWin.jpg" alt="drunk superpower game">
+    <img src="https://aidayg24.github.io/causal_selection/images/main/drunkWin.jpg" alt="drunk superpower game">
        <p><strong>How much do you agree with the following statements?</strong></p>
        <p>1. Charlie normally uses his superpower in the games.</p>
         <RatingInput
@@ -174,9 +174,9 @@
   
     <Slide>
         <p>In the following image you can see the rules and the points of each move</p>
-        <img src="/images/main/exactly2.jpg" alt="2 point Rule">
+        <img src="https://aidayg24.github.io/causal_selection/images/main/exactly2.jpg" alt="2 point Rule">
     
-    <img src="/images/main/superpowerLost.jpg" alt="drunk superpower lost game">
+    <img src="https://aidayg24.github.io/causal_selection/images/main/superpowerLost.jpg" alt="drunk superpower lost game">
         <p><strong>How much do you agree with the following statements?</strong></p>
       <p>1. Charlie normally uses his superpower in the games.</p>
         <RatingInput
@@ -203,9 +203,9 @@
   
     <Slide>
         <p>In the following image you can see the rules and the points of each move</p>
-        <img src="/images/main/exactly2.jpg" alt="2 point Rule">
+        <img src="https://aidayg24.github.io/causal_selection/images/main/exactly2.jpg" alt="2 point Rule">
     
-    <img src="/images/main/drunkLost.jpg" alt="drunk superpower lost game">
+    <img src="https://aidayg24.github.io/causal_selection/images/main/drunkLost.jpg" alt="drunk superpower lost game">
         <p><strong>How much do you agree with the following statements?</strong></p>
       <p>1. Charlie normally uses his superpower in the games.</p>
         <RatingInput
@@ -232,9 +232,9 @@
   
     <Slide>
         <p>In the following image you can see the rules and the points of each move</p>
-        <img src="/images/main/atLeast1.jpg" alt="1 point Rule">
+        <img src="https://aidayg24.github.io/causal_selection/images/main/atLeast1.jpg" alt="1 point Rule">
     
-    <img src="/images/main/drunkWinatleast1.jpg" alt="drunk superpower game">
+    <img src="https://aidayg24.github.io/causal_selection/images/main/drunkWinatleast1.jpg" alt="drunk superpower game">
         <p><strong>How much do you agree with the following statements?</strong></p>
       <p>1. Charlie normally uses his superpower in the games.</p>
         <RatingInput
@@ -261,9 +261,9 @@
   
     <Slide>
         <p>In the following image you can see the rules and the points of each move</p>
-        <img src="/images/main/atLeast1.jpg" alt="1 point Rule">
+        <img src="https://aidayg24.github.io/causal_selection/images/main/atLeast1.jpg" alt="1 point Rule">
     
-    <img src="/images/main/superpowerWinatleast1.jpg" alt="drunk superpower game">
+    <img src="https://aidayg24.github.io/causal_selection/images/main/superpowerWinatleast1.jpg" alt="drunk superpower game">
         <p><strong>How much do you agree with the following statements?</strong></p>
       <p>1. Charlie normally uses his superpower in the games.</p>
         <RatingInput
@@ -289,9 +289,9 @@
   
     <Slide>
         <p>In the following image you can see the rules and the points of each move</p>
-        <img src="/images/main/atLeast1.jpg" alt="1 point Rule">
+        <img src="https://aidayg24.github.io/causal_selection/images/main/atLeast1.jpg" alt="1 point Rule">
     
-    <img src="/images/main/superpowerLost.jpg" alt="drunk superpower game">
+    <img src="https://aidayg24.github.io/causal_selection/images/main/superpowerLost.jpg" alt="drunk superpower game">
         <p><strong>How much do you agree with the following statements?</strong></p>
       <p>1. Charlie normally uses his superpower in the games.</p>
         <RatingInput
@@ -317,9 +317,9 @@
   
     <Slide>
         <p>In the following image you can see the rules and the points of each move</p>
-        <img src="/images/main/atLeast1.jpg" alt="1 point Rule">
+        <img src="https://aidayg24.github.io/causal_selection/images/main/atLeast1.jpg" alt="1 point Rule">
     
-    <img src="/images/main/drunkLost.jpg" alt="drunk superpower game">
+    <img src="https://aidayg24.github.io/causal_selection/images/main/drunkLost.jpg" alt="drunk superpower game">
         <p><strong>How much do you agree with the following statements?</strong></p>
       <p>1. Charlie normally uses his superpower in the games.</p>
         <RatingInput
