@@ -1,30 +1,44 @@
 <template>
   <Experiment title="magpie demo">
     <InstructionScreen :title="'Welcome'">
-      Thank you for participating in this experiment! It should take no more than 15 minutes to complete.
-      <br/>
-      
-Before starting the main tasks, you will practice with a small trial.
+  <p><strong>Welcome, and thank you for participating!</strong><br/>
+  This experiment will take about <strong>20 minutes</strong> to complete.</p>
 
-In this trial, you will read short reports about an imaginary game. After each report, you will be asked questions about the
-game. 
+  <p>In this experiment, you will read about games between two players</p>
+
+  <ul>
+    <li>Each player can make certain moves.</li>
+    <li>Depending on their moves, <strong>points are awarded</strong> </li>
+    <li>Each game also has a <strong>win rule</strong>, which tells us how a player can win.</li>
+  </ul>
+
+  <p>You will be shown:</p>
+  <ol>
+    <li>The rules of the game </li>
+    <li>What moves the players made</li>
+    <li>The resulting points and outcome</li>
+  </ol>
+
+  <p>Based on this information, you will be asked to <strong>make judgments</strong> about the game.</p>
+
+  <p>Before the main experiment begins, you will complete <strong>3 practice questions</strong> 
+  to get familiar with the rules.</p>
+
+  <p>👉 Click <strong>Next</strong> to start the trial questions!</p>
     </InstructionScreen>
 
 <!-- , trial -->
 <Screen>
   <p>
-    Alice and Bob are playing a small game.<br/>
-     Alice has a coin which has a yellow and a red side, and Bob has a normal coin with head and tail sides.
-    <br/>
-    Alice earns 1 point if her coin comes yellow; otherwise, Bob earns 1 point.<br/>
-    Alice earns 1 point if Bob's coin comes head; otherwise, Bob earns 1 point<br/>
-    For a player to win, they need <b>exactly 2 points.</b>
+    Alice and Bob are playing a small game. Both have two cards and they can pick one of them. In the image below you can see the points for each move:<br/>
+    <img src="/images/training/2point.jpg" alt="2 point Rule">
+    <strong>If in the game they played the following: </strong>
+    <img src="/images/training/yellow_tail.jpg" alt="yellow tail game">
   </p>
   <ForcedChoiceScreen
         :options="['Alice', 'Bob', 'No one']"
         question="Who will win?"
-        qud="Alice's coin comes yellow, Bob's coin comes tail."
-        :feedbackTime="3500" >
+        :feedbackTime="2000" >
 
   <template #feedback>
         <p v-if="$magpie.measurements.response === 'No one'">Correct! let's go to next one.</p>
@@ -37,15 +51,14 @@ game.
 <Screen>
   <p>
     Still the same game as previouse one;<br/>
-    Alice earns 1 point if her coin comes yellow; otherwise, Bob earns 1 point.<br/>
-    Alice earns 1 point if Bob's coin comes head; otherwise, Bob earns 1 point<br/>
-    For a player to win, they need <b>exactly 2 points.</b>
+    <img src="/images/training/2point.jpg" alt="2 point Rule">
+    <strong>If in the game they played the following: </strong>
+    <img src="/images/training/yellow_head.jpg" alt="yellow head game">
   </p>
   <ForcedChoiceScreen
         :options="['Alice', 'Bob', 'No one']"
         question="Who will win?"
-        qud="Alice's coin comes yellow, Bob's coin comes head."
-        :feedbackTime="3500" >
+        :feedbackTime="2000" >
 
   <template #feedback>
         <p v-if="$magpie.measurements.response === 'Alice'">Correct! let's go to next one.</p>
@@ -58,15 +71,14 @@ game.
 <Screen>
   <p>
     Now, a small change in the rules;<br/>
-    Alice earns 1 point if her coin comes yellow; otherwise, Bob earns 1 point.<br/>
-    Alice earns 1 point if Bob's coin comes head; otherwise, Bob earns 1 point<br/>
-    For a player to win, they need <b>at least 1 point.</b>
+    <img src="/images/training/atleast1point.jpg" alt="1 point Rule">
+    <strong>If in the game they played the following: </strong>
+    <img src="/images/training/red_tail.jpg" alt="red tail game">
   </p>
   <ForcedChoiceScreen
         :options="['Alice', 'Bob', 'No one']"
         question="Who will win?"
-        qud="Alice's coin comes red, Bob's coin comes tail."
-        :feedbackTime="3500" >
+        :feedbackTime="2000" >
 
   <template #feedback>
         <p v-if="$magpie.measurements.response === 'Bob'">Correct!</p>
@@ -76,21 +88,260 @@ game.
   </ForcedChoiceScreen>
 </Screen>
 
-<InstructionScreen :title="'Instruction'">
-      Well done in the trial round! Now we can start the main experiment!<br/>
-      In this experiment, similar to trial, you will read short reports about an imaginary game played in an
-imaginary country. After each report, you will be asked questions about the
-game. 
-<br/>Please answer each question according to your own judgment; there are
-no right or wrong answers.<br/>
-Some scenarios may look similar, but pay close attention: they can differ in small
-but important details. Please pay extra attention to the <b>bold</b> parts. You may also find that you give similar answers across
-different questions, which is completely fine.
-<br/>
-Let's start.
-    </InstructionScreen>
+<InstructionScreen :title="'Instructions'">
+  Well done on the practice round! Now we can begin the main experiment.<br/><br/>
 
-<!-- Q1, positive, abnormal cause -->
+  In this experiment, <strong>Charlie</strong> and <strong>Bob</strong> are playing a game.  
+  Each of them can take one of two possible actions.
+  <br/> Charlie has a superpower that he can choose to use it or not, <br/>
+  and Bob can choose to drink beer during the game or not.<br/>  
+
+  For each question, you will see a short report showing:<br/>  
+  - what actions the players chose, and  <br/>  
+  - a one-sentence summary of the outcome. <br/>   
+
+  After the report, you will be asked questions about the game.<br/><br/>
+
+  <strong>Please answer according to your own judgment.</strong>  
+  There are no right or wrong answers.  <br/>  
+
+  Some scenarios may look very similar, but small details can be important.    
+  It is also perfectly fine if you give similar answers across different questions.<br/><br/>
+
+  Let’s get started!
+</InstructionScreen>
+<!-- switched to experiment 2 because I think it is more informative -->
+<!-- Q1, 2 point for win, superpower is the cause -->
+  <Screen>
+  
+    <Slide>
+        <p>In the following image you can see the rules and the points of each move</p>
+        <img src="/images/main/exactly2.jpg" alt="2 point Rule">
+    
+    <img src="/images/main/superpowerWin2.jpg" alt="drunk superpower game">
+
+    <p><strong>How much do you agree with the following statements?</strong></p>
+        <p>1. Charlie normally uses his superpower in the games.</p>
+        <RatingInput
+          left="Strongly disagree"
+          right="Strongly agree"
+          :response.sync="$magpie.measurements.superpowerNorm"
+        />
+
+        <p>2. Bob normally drinks beer during the games.</p>
+        <RatingInput
+        left="Strongly disagree"
+        right="Strongly agree"
+        :response.sync="$magpie.measurements.drinkNorm"
+        />
+       
+        <button @click="$magpie.saveAndNextScreen()">Next Report</button>
+       
+    </Slide>
+</Screen>
+
+<!-- Q2, 2 point for win, drink is the cause -->
+  <Screen>
+  
+    <Slide>
+        <p>In the following image you can see the rules and the points of each move</p>
+        <img src="/images/main/exactly2.jpg" alt="2 point Rule">
+    
+    <img src="/images/main/drunkWin.jpg" alt="drunk superpower game">
+       <p><strong>How much do you agree with the following statements?</strong></p>
+       <p>1. Charlie normally uses his superpower in the games.</p>
+        <RatingInput
+          left="Strongly disagree"
+          right="Strongly agree"
+          :response.sync="$magpie.measurements.superpowerNorm"
+        />
+
+        <p>2. Bob normally drinks beer during the games.</p>
+        <RatingInput
+        left="Strongly disagree"
+        right="Strongly agree"
+        :response.sync="$magpie.measurements.drinkNorm"
+        />
+       
+        <button @click="$magpie.saveAndNextScreen()">Next Report</button>
+       
+    </Slide>
+</Screen>
+
+
+<!-- Q3, 2 point for win, lost, superpower is the cause -->
+  <Screen>
+  
+    <Slide>
+        <p>In the following image you can see the rules and the points of each move</p>
+        <img src="/images/main/exactly2.jpg" alt="2 point Rule">
+    
+    <img src="/images/main/superpowerLost.jpg" alt="drunk superpower lost game">
+        <p><strong>How much do you agree with the following statements?</strong></p>
+      <p>1. Charlie normally uses his superpower in the games.</p>
+        <RatingInput
+          left="Strongly disagree"
+          right="Strongly agree"
+          :response.sync="$magpie.measurements.superpowerNorm"
+        />
+
+        <p>2. Bob normally drinks beer during the games.</p>
+        <RatingInput
+        left="Strongly disagree"
+        right="Strongly agree"
+        :response.sync="$magpie.measurements.drinkNorm"
+        />
+       
+        <button @click="$magpie.saveAndNextScreen()">Next Report</button>
+       
+    </Slide>
+</Screen>
+
+
+<!-- Q4, 2 point for win,lost, drink is the cause -->
+  <Screen>
+  
+    <Slide>
+        <p>In the following image you can see the rules and the points of each move</p>
+        <img src="/images/main/exactly2.jpg" alt="2 point Rule">
+    
+    <img src="/images/main/drunkLost.jpg" alt="drunk superpower lost game">
+        <p><strong>How much do you agree with the following statements?</strong></p>
+      <p>1. Charlie normally uses his superpower in the games.</p>
+        <RatingInput
+          left="Strongly disagree"
+          right="Strongly agree"
+          :response.sync="$magpie.measurements.superpowerNorm"
+        />
+
+        <p>2. Bob normally drinks beer during the games.</p>
+        <RatingInput
+        left="Strongly disagree"
+        right="Strongly agree"
+        :response.sync="$magpie.measurements.drinkNorm"
+        />
+       
+        <button @click="$magpie.saveAndNextScreen()">Next Report</button>
+       
+    </Slide>
+</Screen>
+
+
+<!-- Q5, at least 1 point for win, superpower is the cause -->
+  <Screen>
+  
+    <Slide>
+        <p>In the following image you can see the rules and the points of each move</p>
+        <img src="/images/main/atLeast1.jpg" alt="1 point Rule">
+    
+    <img src="/images/main/drunkWinatleast1.jpg" alt="drunk superpower game">
+        <p><strong>How much do you agree with the following statements?</strong></p>
+      <p>1. Charlie normally uses his superpower in the games.</p>
+        <RatingInput
+          left="Strongly disagree"
+          right="Strongly agree"
+          :response.sync="$magpie.measurements.superpowerNorm"
+        />
+
+        <p>2. Bob normally drinks beer during the games.</p>
+        <RatingInput
+        left="Strongly disagree"
+        right="Strongly agree"
+        :response.sync="$magpie.measurements.drinkNorm"
+        />
+       
+        <button @click="$magpie.saveAndNextScreen()">Next Report</button>
+       
+    </Slide>
+</Screen>
+
+
+<!-- Q6, at least 1 point for win, drink is the cause -->
+  <Screen>
+  
+    <Slide>
+        <p>In the following image you can see the rules and the points of each move</p>
+        <img src="/images/main/atLeast1.jpg" alt="1 point Rule">
+    
+    <img src="/images/main/superpowerWinatleast1.jpg" alt="drunk superpower game">
+        <p><strong>How much do you agree with the following statements?</strong></p>
+      <p>1. Charlie normally uses his superpower in the games.</p>
+        <RatingInput
+          left="Strongly disagree"
+          right="Strongly agree"
+          :response.sync="$magpie.measurements.superpowerNorm"
+        />
+
+        <p>2. Bob normally drinks beer during the games.</p>
+        <RatingInput
+        left="Strongly disagree"
+        right="Strongly agree"
+        :response.sync="$magpie.measurements.drinkNorm"
+        />
+       
+        <button @click="$magpie.saveAndNextScreen()">Next Report</button>
+       
+    </Slide>
+</Screen>
+
+<!-- Q7, at least 1 point for win, lost,superpower is the cause -->
+  <Screen>
+  
+    <Slide>
+        <p>In the following image you can see the rules and the points of each move</p>
+        <img src="/images/main/atLeast1.jpg" alt="1 point Rule">
+    
+    <img src="/images/main/superpowerLost.jpg" alt="drunk superpower game">
+        <p><strong>How much do you agree with the following statements?</strong></p>
+      <p>1. Charlie normally uses his superpower in the games.</p>
+        <RatingInput
+          left="Strongly disagree"
+          right="Strongly agree"
+          :response.sync="$magpie.measurements.superpowerNorm"
+        />
+
+        <p>2. Bob normally drinks beer during the games.</p>
+        <RatingInput
+        left="Strongly disagree"
+        right="Strongly agree"
+        :response.sync="$magpie.measurements.drinkNorm"
+        />
+       
+        <button @click="$magpie.saveAndNextScreen()">Next Report</button>
+       
+    </Slide>
+</Screen>
+
+<!-- Q8, at least 1 point for win, lost,drunk is the cause -->
+  <Screen>
+  
+    <Slide>
+        <p>In the following image you can see the rules and the points of each move</p>
+        <img src="/images/main/atLeast1.jpg" alt="1 point Rule">
+    
+    <img src="/images/main/drunkLost.jpg" alt="drunk superpower game">
+        <p><strong>How much do you agree with the following statements?</strong></p>
+      <p>1. Charlie normally uses his superpower in the games.</p>
+        <RatingInput
+          left="Strongly disagree"
+          right="Strongly agree"
+          :response.sync="$magpie.measurements.superpowerNorm"
+        />
+
+        <p>2. Bob normally drinks beer during the games.</p>
+        <RatingInput
+        left="Strongly disagree"
+        right="Strongly agree"
+        :response.sync="$magpie.measurements.drinkNorm"
+        />
+       
+        <button @click="$magpie.saveAndNextScreen()">Next Report</button>
+       
+    </Slide>
+</Screen>
+
+<!--
+ Q1, positive, abnormal cause 
 <Screen>
   
     <Slide>
@@ -130,7 +381,7 @@ Let's start.
        
     </Slide>
 </Screen>
-<!-- Q2, positive normal cause -->
+ Q2, positive normal cause
 <Screen>
     <Slide>
         Last night was the 11th game night event in PlayLand. <br/>Two players, Charlie and Bob, took part.
@@ -171,7 +422,7 @@ Let's start.
     </Slide>
 </Screen>
 
-<!-- Q3, negative, normal cause -->
+ Q3, negative, normal cause 
  <Screen>
     <Slide>
         Last night was the 11th game night event in PlayLand. <br/>Two players, Charlie and Bob, took part.
@@ -211,7 +462,7 @@ Let's start.
        
     </Slide>
 </Screen>
-<!-- Q4, negative, abnormal cause -->
+ Q4, negative, abnormal cause 
  <Screen>
     <Slide>
         Last night was the 11th game night event in PlayLand. <br/>Two players, Charlie and Bob, took part.
@@ -251,6 +502,7 @@ Let's start.
        
     </Slide>
 </Screen>
+-->
  <PostTestScreen />
     <SubmitResultsScreen />
   </Experiment>
