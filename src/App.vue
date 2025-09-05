@@ -116,23 +116,23 @@
   
     <Slide>
         <p>In the following image you can see the rules and the points of each move</p>
-        <img src="https://aidayg24.github.io/causal_selection/images/main/exactly2.jpg" alt="2 point Rule">
+        <img src="https://aidayg24.github.io/causal_selection/images/main/instrumentRule.jpg" alt="2 point Rule">
     
-    <img src="https://aidayg24.github.io/causal_selection/images/main/superpowerWin2.jpg" alt="drunk superpower game">
+    <img src="https://aidayg24.github.io/causal_selection/images/main/instrumentPlay.jpg" alt="player A cause win game">
 
     <p><strong>How much do you agree with the following statements?</strong></p>
         <p>1. Charlie normally uses his superpower in the games.</p>
         <RatingInput
           left="Strongly disagree"
           right="Strongly agree"
-          :response.sync="$magpie.measurements.superpowerNorm"
+          :response.sync="$magpie.measurements.ANorm"
         />
 
         <p>2. Bob normally drinks beer during the games.</p>
         <RatingInput
         left="Strongly disagree"
         right="Strongly agree"
-        :response.sync="$magpie.measurements.drinkNorm"
+        :response.sync="$magpie.measurements.BNorm"
         />
        
         <button @click="$magpie.saveAndNextScreen()">Next Report</button>
@@ -145,22 +145,22 @@
   
     <Slide>
         <p>In the following image you can see the rules and the points of each move</p>
-        <img src="https://aidayg24.github.io/causal_selection/images/main/exactly2.jpg" alt="2 point Rule">
+        <img src="https://aidayg24.github.io/causal_selection/images/main/superpowerRule.jpg" alt="2 point Rule">
     
-    <img src="https://aidayg24.github.io/causal_selection/images/main/drunkWin.jpg" alt="drunk superpower game">
+    <img src="https://aidayg24.github.io/causal_selection/images/main/superpowerPlay.jpg" alt="player B cause win game">
        <p><strong>How much do you agree with the following statements?</strong></p>
        <p>1. Charlie normally uses his superpower in the games.</p>
         <RatingInput
           left="Strongly disagree"
           right="Strongly agree"
-          :response.sync="$magpie.measurements.superpowerNorm"
+          :response.sync="$magpie.measurements.ANorm"
         />
 
         <p>2. Bob normally drinks beer during the games.</p>
         <RatingInput
         left="Strongly disagree"
         right="Strongly agree"
-        :response.sync="$magpie.measurements.drinkNorm"
+        :response.sync="$magpie.measurements.BNorm"
         />
        
         <button @click="$magpie.saveAndNextScreen()">Next Report</button>
@@ -174,22 +174,22 @@
   
     <Slide>
         <p>In the following image you can see the rules and the points of each move</p>
-        <img src="https://aidayg24.github.io/causal_selection/images/main/exactly2.jpg" alt="2 point Rule">
+        <img src="https://aidayg24.github.io/causal_selection/images/main/studyRule.jpg" alt="2 point Rule">
     
-    <img src="https://aidayg24.github.io/causal_selection/images/main/superpowerLost.jpg" alt="drunk superpower lost game">
+    <img src="https://aidayg24.github.io/causal_selection/images/main/studyPlay.jpg" alt="player A cause lost game">
         <p><strong>How much do you agree with the following statements?</strong></p>
       <p>1. Charlie normally uses his superpower in the games.</p>
         <RatingInput
           left="Strongly disagree"
           right="Strongly agree"
-          :response.sync="$magpie.measurements.superpowerNorm"
+          :response.sync="$magpie.measurements.ANorm"
         />
 
         <p>2. Bob normally drinks beer during the games.</p>
         <RatingInput
         left="Strongly disagree"
         right="Strongly agree"
-        :response.sync="$magpie.measurements.drinkNorm"
+        :response.sync="$magpie.measurements.BNorm"
         />
        
         <button @click="$magpie.saveAndNextScreen()">Next Report</button>
@@ -203,22 +203,22 @@
   
     <Slide>
         <p>In the following image you can see the rules and the points of each move</p>
-        <img src="https://aidayg24.github.io/causal_selection/images/main/exactly2.jpg" alt="2 point Rule">
+        <img src="https://aidayg24.github.io/causal_selection/images/main/gameRule.jpg" alt="2 point Rule">
     
-    <img src="https://aidayg24.github.io/causal_selection/images/main/drunkLost.jpg" alt="drunk superpower lost game">
+    <img src="https://aidayg24.github.io/causal_selection/images/main/gamePlay.jpg" alt="player B caused lost  game">
         <p><strong>How much do you agree with the following statements?</strong></p>
       <p>1. Charlie normally uses his superpower in the games.</p>
         <RatingInput
           left="Strongly disagree"
           right="Strongly agree"
-          :response.sync="$magpie.measurements.superpowerNorm"
+          :response.sync="$magpie.measurements.ANorm"
         />
 
         <p>2. Bob normally drinks beer during the games.</p>
         <RatingInput
         left="Strongly disagree"
         right="Strongly agree"
-        :response.sync="$magpie.measurements.drinkNorm"
+        :response.sync="$magpie.measurements.BNorm"
         />
        
         <button @click="$magpie.saveAndNextScreen()">Next Report</button>
@@ -232,22 +232,22 @@
   
     <Slide>
         <p>In the following image you can see the rules and the points of each move</p>
-        <img src="https://aidayg24.github.io/causal_selection/images/main/atLeast1.jpg" alt="1 point Rule">
+        <img src="https://aidayg24.github.io/causal_selection/images/main/drugRule.jpg" alt="1 point Rule">
     
-    <img src="https://aidayg24.github.io/causal_selection/images/main/drunkWinatleast1.jpg" alt="drunk superpower game">
+    <img src="https://aidayg24.github.io/causal_selection/images/main/drugPlay.jpg" alt="player B cause win game">
         <p><strong>How much do you agree with the following statements?</strong></p>
       <p>1. Charlie normally uses his superpower in the games.</p>
         <RatingInput
           left="Strongly disagree"
           right="Strongly agree"
-          :response.sync="$magpie.measurements.superpowerNorm"
+          :response.sync="$magpie.measurements.ANorm"
         />
 
         <p>2. Bob normally drinks beer during the games.</p>
         <RatingInput
         left="Strongly disagree"
         right="Strongly agree"
-        :response.sync="$magpie.measurements.drinkNorm"
+        :response.sync="$magpie.measurements.BNorm"
         />
        
         <button @click="$magpie.saveAndNextScreen()">Next Report</button>
@@ -261,22 +261,22 @@
   
     <Slide>
         <p>In the following image you can see the rules and the points of each move</p>
-        <img src="https://aidayg24.github.io/causal_selection/images/main/atLeast1.jpg" alt="1 point Rule">
+        <img src="https://aidayg24.github.io/causal_selection/images/main/matrixRule.jpg" alt="1 point Rule">
     
-    <img src="https://aidayg24.github.io/causal_selection/images/main/superpowerWinatleast1.jpg" alt="drunk superpower game">
+    <img src="https://aidayg24.github.io/causal_selection/images/main/matrixPlay.jpg" alt="player A caused win game">
         <p><strong>How much do you agree with the following statements?</strong></p>
       <p>1. Charlie normally uses his superpower in the games.</p>
         <RatingInput
           left="Strongly disagree"
           right="Strongly agree"
-          :response.sync="$magpie.measurements.superpowerNorm"
+          :response.sync="$magpie.measurements.ANorm"
         />
 
         <p>2. Bob normally drinks beer during the games.</p>
         <RatingInput
         left="Strongly disagree"
         right="Strongly agree"
-        :response.sync="$magpie.measurements.drinkNorm"
+        :response.sync="$magpie.measurements.BNorm"
         />
        
         <button @click="$magpie.saveAndNextScreen()">Next Report</button>
@@ -289,22 +289,22 @@
   
     <Slide>
         <p>In the following image you can see the rules and the points of each move</p>
-        <img src="https://aidayg24.github.io/causal_selection/images/main/atLeast1.jpg" alt="1 point Rule">
+        <img src="https://aidayg24.github.io/causal_selection/images/main/foodRule.jpg" alt="1 point Rule">
     
-    <img src="https://aidayg24.github.io/causal_selection/images/main/superpowerLost.jpg" alt="drunk superpower game">
+    <img src="https://aidayg24.github.io/causal_selection/images/main/foodPlay.jpg" alt="player A cause lost game">
         <p><strong>How much do you agree with the following statements?</strong></p>
       <p>1. Charlie normally uses his superpower in the games.</p>
         <RatingInput
           left="Strongly disagree"
           right="Strongly agree"
-          :response.sync="$magpie.measurements.superpowerNorm"
+          :response.sync="$magpie.measurements.ANorm"
         />
 
         <p>2. Bob normally drinks beer during the games.</p>
         <RatingInput
         left="Strongly disagree"
         right="Strongly agree"
-        :response.sync="$magpie.measurements.drinkNorm"
+        :response.sync="$magpie.measurements.BNorm"
         />
        
         <button @click="$magpie.saveAndNextScreen()">Next Report</button>
@@ -317,22 +317,22 @@
   
     <Slide>
         <p>In the following image you can see the rules and the points of each move</p>
-        <img src="https://aidayg24.github.io/causal_selection/images/main/atLeast1.jpg" alt="1 point Rule">
+        <img src="https://aidayg24.github.io/causal_selection/images/main/superheroRule.jpg" alt="1 point Rule">
     
-    <img src="https://aidayg24.github.io/causal_selection/images/main/drunkLost.jpg" alt="drunk superpower game">
+    <img src="https://aidayg24.github.io/causal_selection/images/main/superheroPlay.jpg" alt="player B cause lost game">
         <p><strong>How much do you agree with the following statements?</strong></p>
       <p>1. Charlie normally uses his superpower in the games.</p>
         <RatingInput
           left="Strongly disagree"
           right="Strongly agree"
-          :response.sync="$magpie.measurements.superpowerNorm"
+          :response.sync="$magpie.measurements.ANorm"
         />
 
         <p>2. Bob normally drinks beer during the games.</p>
         <RatingInput
         left="Strongly disagree"
         right="Strongly agree"
-        :response.sync="$magpie.measurements.drinkNorm"
+        :response.sync="$magpie.measurements.BNorm"
         />
        
         <button @click="$magpie.saveAndNextScreen()">Next Report</button>
