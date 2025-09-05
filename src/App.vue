@@ -30,7 +30,7 @@
 <!-- , trial -->
 <Screen>
   <p>
-    Alice and Bob are playing a small game. Both have two cards and they can pick one of them. In the image below you can see the points for each move:<br/>
+    Alice and Bob are playing a small game. Both have two cards, and they can pick one of them. In the image below, you can see the points for each move:<br/>
     <img src="https://aidayg24.github.io/causal_selection/images/training/2point.jpg" alt="2 point Rule">
     <strong>If in the game they played the following: </strong>
     <img src="https://aidayg24.github.io/causal_selection/images/training/yellow_tail.jpg" alt="yellow tail game">
@@ -41,8 +41,8 @@
         :feedbackTime="2000" >
 
   <template #feedback>
-        <p v-if="$magpie.measurements.response === 'No one'">Correct! let's go to next one.</p>
-        <p v-else>Incorrect, Alice has 1 point and Bob too, but for winning they need exactly 2 points.</p>
+        <p v-if="$magpie.measurements.response === 'No one'">Correct! Let's go to the next one.</p>
+        <p v-else>Incorrect, Alice has 1 point and Bob too, but for winning, they need exactly 2 points.</p>
     </template>
       
   </ForcedChoiceScreen>
@@ -50,7 +50,7 @@
 
 <Screen>
   <p>
-    Still the same game as previouse one;<br/>
+    Still the same game as the previous one;<br/>
     <img src="https://aidayg24.github.io/causal_selection/images/training/2point.jpg" alt="2 point Rule">
     <strong>If in the game they played the following: </strong>
     <img src="https://aidayg24.github.io/causal_selection/images/training/yellow_head.jpg" alt="yellow head game">
@@ -61,8 +61,8 @@
         :feedbackTime="2000" >
 
   <template #feedback>
-        <p v-if="$magpie.measurements.response === 'Alice'">Correct! let's go to next one.</p>
-        <p v-else>Incorrect, Alice has 2 point and Bob 0, and for winning they need exactly 2 points.</p>
+        <p v-if="$magpie.measurements.response === 'Alice'">Correct! Let's go to the next one.</p>
+        <p v-else>Incorrect, Alice has 2 points and Bob 0, and for winning, they need exactly 2 points.</p>
     </template>
       
   </ForcedChoiceScreen>
@@ -82,7 +82,7 @@
 
   <template #feedback>
         <p v-if="$magpie.measurements.response === 'Bob'">Correct!</p>
-        <p v-else>Incorrect, Alice has 0 point and Bob 2, and for winning they need at least 1 point.</p>
+        <p v-else>Incorrect, Alice has 0 points and Bob 2, and for winning, they need at least 1 point.</p>
     </template>
       
   </ForcedChoiceScreen>
@@ -91,47 +91,42 @@
 <InstructionScreen :title="'Instructions'">
   Well done on the practice round! Now we can begin the main experiment.<br/><br/>
 
-  In this experiment, <strong>Charlie</strong> and <strong>Bob</strong> are playing a game.  
-  Each of them can take one of two possible actions.
-  <br/> Charlie has a superpower that he can choose to use it or not, <br/>
-  and Bob can choose to drink beer during the game or not.<br/>  
+In this part, two players are taking part in a <em>“Choosing Game.”</em>  
+Each player has two possible options, and they must choose one of them.  
+The options for each player will be explained in the scenario.<br/><br/>
 
-  For each question, you will see a short report showing:<br/>  
-  - what actions the players chose, and  <br/>  
-  - a one-sentence summary of the outcome. <br/>   
+For each question, you will be shown a short report that tells you: <br/>  
+- which options the players chose, and <br/>  
+- a one-sentence explanation of what caused the result of the game. <br/><br/>
 
-  After the report, you will be asked questions about the game.<br/><br/>
+<strong>Your task: Imagine the players had played the same game 10 times before.  
+Based on the report, estimate how often each player would typically choose their options. </strong> <br/><br/>
 
-  <strong>Please answer according to your own judgment.</strong>  
-  There are no right or wrong answers.  <br/>  
+<strong>Please answer according to your own judgment.</strong>  
+There are no right or wrong answers. <br/><br/>
 
-  Some scenarios may look very similar, but small details can be important.    
-  It is also perfectly fine if you give similar answers across different questions.<br/><br/>
-
-  Let’s get started!
+Let’s get started!
 </InstructionScreen>
 <!-- switched to experiment 2 because I think it is more informative -->
-<!-- Q1, 2 point for win, superpower is the cause -->
+<!-- Q1, -->
   <Screen>
   
     <Slide>
-        <p>In the following image, you can see the rules and the points of each move</p>
-        <img src="https://aidayg24.github.io/causal_selection/images/main/instrumentRule.jpg" alt="2 point Rule">
+        <p>Look at the image below to see the rules and how points are assigned.</p>
+        <img src="https://aidayg24.github.io/causal_selection/images/main/InstrumentRule.jpg" alt="2 point Rule">
     
     <img src="https://aidayg24.github.io/causal_selection/images/main/instrumentPlay.jpg" alt="player A cause win game">
 
-    <p><strong>How much do you agree with the following statements?</strong></p>
-        <p>1. Charlie normally uses his superpower in the games.</p>
+    <p><strong>If the players had played this game 10 times before,</strong></p>
+        <p><strong>1.  How many times would Alice have chosen the violin?</strong></p>
         <RatingInput
-          left="Strongly disagree"
-          right="Strongly agree"
+          :count="10"
           :response.sync="$magpie.measurements.ANorm"
         />
 
-        <p>2. Bob normally drinks beer during the games.</p>
+        <p><strong> 2. How many times would Max have chosen the guitar?</strong></p>
         <RatingInput
-        left="Strongly disagree"
-        right="Strongly agree"
+          :count="10"
         :response.sync="$magpie.measurements.BNorm"
         />
        
@@ -140,26 +135,25 @@
     </Slide>
 </Screen>
 
-<!-- Q2, 2 point for win, drink is the cause -->
+<!-- Q2, -->
   <Screen>
   
     <Slide>
-        <p>In the following image you can see the rules and the points of each move</p>
+        <p>Look at the image below to see the rules and how points are assigned.</p>
         <img src="https://aidayg24.github.io/causal_selection/images/main/superpowerRule.jpg" alt="2 point Rule">
     
     <img src="https://aidayg24.github.io/causal_selection/images/main/superpowerPlay.jpg" alt="player B cause win game">
-       <p><strong>How much do you agree with the following statements?</strong></p>
-       <p>1. Charlie normally uses his superpower in the games.</p>
+       
+     <p><strong>If the players had played this game 10 times before,</strong></p>
+        <p><strong>1.  How many times would Charlie have chosen the superpower?</strong></p>
         <RatingInput
-          left="Strongly disagree"
-          right="Strongly agree"
+          :count="10"
           :response.sync="$magpie.measurements.ANorm"
         />
 
-        <p>2. Bob normally drinks beer during the games.</p>
+        <p><strong> 2. How many times would Bob have chosen the beer?</strong></p>
         <RatingInput
-        left="Strongly disagree"
-        right="Strongly agree"
+          :count="10"
         :response.sync="$magpie.measurements.BNorm"
         />
        
@@ -169,26 +163,24 @@
 </Screen>
 
 
-<!-- Q3, 2 point for win, lost, superpower is the cause -->
+<!-- Q3, -->
   <Screen>
   
     <Slide>
-        <p>In the following image you can see the rules and the points of each move</p>
+        <p>Look at the image below to see the rules and how points are assigned.</p>
         <img src="https://aidayg24.github.io/causal_selection/images/main/studyRule.jpg" alt="2 point Rule">
     
     <img src="https://aidayg24.github.io/causal_selection/images/main/studyPlay.jpg" alt="player A cause lost game">
-        <p><strong>How much do you agree with the following statements?</strong></p>
-      <p>1. Charlie normally uses his superpower in the games.</p>
+        <p><strong>If the players had played this game 10 times before,</strong></p>
+        <p><strong>1.  How many times would Eli have chosen history?</strong></p>
         <RatingInput
-          left="Strongly disagree"
-          right="Strongly agree"
+          :count="10"
           :response.sync="$magpie.measurements.ANorm"
         />
 
-        <p>2. Bob normally drinks beer during the games.</p>
+        <p><strong> 2. How many times would Nana have chosen biology?</strong></p>
         <RatingInput
-        left="Strongly disagree"
-        right="Strongly agree"
+          :count="10"
         :response.sync="$magpie.measurements.BNorm"
         />
        
@@ -198,26 +190,24 @@
 </Screen>
 
 
-<!-- Q4, 2 point for win,lost, drink is the cause -->
+<!-- Q4, -->
   <Screen>
   
     <Slide>
-        <p>In the following image you can see the rules and the points of each move</p>
+        <p>Look at the image below to see the rules and how points are assigned.</p>
         <img src="https://aidayg24.github.io/causal_selection/images/main/gameRule.jpg" alt="2 point Rule">
     
     <img src="https://aidayg24.github.io/causal_selection/images/main/gamePlay.jpg" alt="player B caused lost  game">
-        <p><strong>How much do you agree with the following statements?</strong></p>
-      <p>1. Charlie normally uses his superpower in the games.</p>
+        <p><strong>If the players had played this game 10 times before,</strong></p>
+        <p><strong>1.  How many times would Mia have chosen to party?</strong></p>
         <RatingInput
-          left="Strongly disagree"
-          right="Strongly agree"
+          :count="10"
           :response.sync="$magpie.measurements.ANorm"
         />
 
-        <p>2. Bob normally drinks beer during the games.</p>
+        <p><strong> 2. How many times would Bob have chosen to study?</strong></p>
         <RatingInput
-        left="Strongly disagree"
-        right="Strongly agree"
+          :count="10"
         :response.sync="$magpie.measurements.BNorm"
         />
        
@@ -227,26 +217,24 @@
 </Screen>
 
 
-<!-- Q5, at least 1 point for win, superpower is the cause -->
+<!-- Q5, -->
   <Screen>
   
     <Slide>
-        <p>In the following image you can see the rules and the points of each move</p>
+        <p>Look at the image below to see the rules and how points are assigned.</p>
         <img src="https://aidayg24.github.io/causal_selection/images/main/drugRule.jpg" alt="1 point Rule">
     
     <img src="https://aidayg24.github.io/causal_selection/images/main/drugPlay.jpg" alt="player B cause win game">
-        <p><strong>How much do you agree with the following statements?</strong></p>
-      <p>1. Charlie normally uses his superpower in the games.</p>
+        <p><strong>If the players had played this game 10 times before,</strong></p>
+        <p><strong>1.  How many times would Zoe have chosen to take the pill?</strong></p>
         <RatingInput
-          left="Strongly disagree"
-          right="Strongly agree"
+          :count="10"
           :response.sync="$magpie.measurements.ANorm"
         />
 
-        <p>2. Bob normally drinks beer during the games.</p>
+        <p><strong> 2. How many times would Tom have chosen the beer?</strong></p>
         <RatingInput
-        left="Strongly disagree"
-        right="Strongly agree"
+          :count="10"
         :response.sync="$magpie.measurements.BNorm"
         />
        
@@ -256,26 +244,24 @@
 </Screen>
 
 
-<!-- Q6, at least 1 point for win, drink is the cause -->
+<!-- Q6, -->
   <Screen>
   
     <Slide>
-        <p>In the following image you can see the rules and the points of each move</p>
+        <p>Look at the image below to see the rules and how points are assigned.</p>
         <img src="https://aidayg24.github.io/causal_selection/images/main/matrixRule.jpg" alt="1 point Rule">
     
     <img src="https://aidayg24.github.io/causal_selection/images/main/matrixPlay.jpg" alt="player A caused win game">
-        <p><strong>How much do you agree with the following statements?</strong></p>
-      <p>1. Charlie normally uses his superpower in the games.</p>
+        <p><strong>If the players had played this game 10 times before,</strong></p>
+        <p><strong>1.  How many times would Neo have chosen the red pill?</strong></p>
         <RatingInput
-          left="Strongly disagree"
-          right="Strongly agree"
+          :count="10"
           :response.sync="$magpie.measurements.ANorm"
         />
 
-        <p>2. Bob normally drinks beer during the games.</p>
+        <p><strong> 2. How many times would Alice have chosen to eat?</strong></p>
         <RatingInput
-        left="Strongly disagree"
-        right="Strongly agree"
+          :count="10"
         :response.sync="$magpie.measurements.BNorm"
         />
        
@@ -284,26 +270,24 @@
     </Slide>
 </Screen>
 
-<!-- Q7, at least 1 point for win, lost,superpower is the cause -->
+<!-- Q7,-->
   <Screen>
   
     <Slide>
-        <p>In the following image you can see the rules and the points of each move</p>
+        <p>Look at the image below to see the rules and how points are assigned.</p>
         <img src="https://aidayg24.github.io/causal_selection/images/main/foodRule.jpg" alt="1 point Rule">
     
     <img src="https://aidayg24.github.io/causal_selection/images/main/foodPlay.jpg" alt="player A cause lost game">
-        <p><strong>How much do you agree with the following statements?</strong></p>
-      <p>1. Charlie normally uses his superpower in the games.</p>
+        <p><strong>If the players had played this game 10 times before,</strong></p>
+        <p><strong>1.  How many times would Ben have chosen the salad?</strong></p>
         <RatingInput
-          left="Strongly disagree"
-          right="Strongly agree"
+          :count="10"
           :response.sync="$magpie.measurements.ANorm"
         />
 
-        <p>2. Bob normally drinks beer during the games.</p>
+        <p><strong> 2. How many times would Lia have chosen the popcorn?</strong></p>
         <RatingInput
-        left="Strongly disagree"
-        right="Strongly agree"
+          :count="10"
         :response.sync="$magpie.measurements.BNorm"
         />
        
@@ -312,26 +296,24 @@
     </Slide>
 </Screen>
 
-<!-- Q8, at least 1 point for win, lost,drunk is the cause -->
+<!-- Q8,  -->
   <Screen>
   
     <Slide>
-        <p>In the following image you can see the rules and the points of each move</p>
+        <p>Look at the image below to see the rules and how points are assigned.</p>
         <img src="https://aidayg24.github.io/causal_selection/images/main/superheroRule.jpg" alt="1 point Rule">
     
     <img src="https://aidayg24.github.io/causal_selection/images/main/superheroPlay.jpg" alt="player B cause lost game">
-        <p><strong>How much do you agree with the following statements?</strong></p>
-      <p>1. Charlie normally uses his superpower in the games.</p>
+        <p><strong>If the players had played this game 10 times before,</strong></p>
+        <p><strong>1.  How many times would Leo have chosen Spider-Man?</strong></p>
         <RatingInput
-          left="Strongly disagree"
-          right="Strongly agree"
+          :count="10"
           :response.sync="$magpie.measurements.ANorm"
         />
 
-        <p>2. Bob normally drinks beer during the games.</p>
+        <p><strong> 2. How many times would Sam have chosen the Joker?</strong></p>
         <RatingInput
-        left="Strongly disagree"
-        right="Strongly agree"
+          :count="10"
         :response.sync="$magpie.measurements.BNorm"
         />
        
