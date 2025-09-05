@@ -115,7 +115,7 @@
   <Screen>
   
     <Slide>
-        <p>In the following image you can see the rules and the points of each move</p>
+        <p>In the following image, you can see the rules and the points of each move</p>
         <img src="https://aidayg24.github.io/causal_selection/images/main/instrumentRule.jpg" alt="2 point Rule">
     
     <img src="https://aidayg24.github.io/causal_selection/images/main/instrumentPlay.jpg" alt="player A cause win game">
