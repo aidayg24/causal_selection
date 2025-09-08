@@ -349,7 +349,6 @@ Let’s go!
             :randomize="true"
             :responses.sync= "$magpie.measurements.responses"
         />
-        <button @click="$magpie.saveAndNextScreen();">Submit</button>
       </Slide>
         
        
