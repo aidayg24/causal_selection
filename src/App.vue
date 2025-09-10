@@ -1,6 +1,6 @@
 <template>
   <Experiment title="magpie demo">
-    <InstructionScreen :title="'Welcome'">
+    <!-- <InstructionScreen :title="'Welcome'">
   <p><strong>Welcome, and thank you for participating!</strong><br/>
   This experiment will take about <strong>20 minutes</strong> to complete.</p>
 
@@ -25,10 +25,10 @@
   to get familiar with the rules.</p>
 
   <p>👉 Click <strong>Next</strong> to start the trial questions!</p>
-    </InstructionScreen>
+    </InstructionScreen> -->
 
 <!-- , trial -->
-<Screen>
+<!-- <Screen>
   <p>
     Alice and Bob are playing a small game. Both have two cards and they can pick one of them. In the image below you can see the points for each move:<br/>
     <img src="https://aidayg24.github.io/causal_selection/images/training/2point.jpg" alt="2 point Rule">
@@ -46,9 +46,9 @@
     </template>
       
   </ForcedChoiceScreen>
-</Screen>
+</Screen> -->
 
-<Screen>
+<!-- <Screen>
   <p>
     Still the same game as previouse one;<br/>
     <img src="https://aidayg24.github.io/causal_selection/images/training/2point.jpg" alt="2 point Rule">
@@ -66,9 +66,9 @@
     </template>
       
   </ForcedChoiceScreen>
-</Screen>
+</Screen> -->
 
-<Screen>
+<!-- <Screen>
   <p>
     Now, a small change in the rules;<br/>
     <img src="https://aidayg24.github.io/causal_selection/images/training/atleast1point.jpg" alt="1 point Rule">
@@ -86,36 +86,51 @@
     </template>
       
   </ForcedChoiceScreen>
-</Screen>
+</Screen> -->
 
-<InstructionScreen :title="'Instructions'">
-  Well done on the practice round! Now we can begin the main experiment. <br/><br/>
+  <InstructionScreen :title="'Instructions'">
+    <p><strong>Welcome, and thank you for participating!</strong><br>
+      This experiment will take about <strong>20 minutes</strong> to complete.
+    </p>
 
-In this part, two players are taking part in a <em>“Card Game.”</em>
-Each player has a deck of 10 cards. Every deck contains only two types of emojis, and the players cannot see the emojis. The exact number of each emoji is unknown to them. <br/><br/>
+    <p>In this experiment, two players take part in a <em>Card Game</em>.
+      Each player has a deck of 10 cards. Each deck contains only two types of
+      emoji cards, and the cards are hidden. The exact number of each type is
+      unknown to the players.
+    </p>
 
-In each round, both players draw one card at random. Then a short report will tell you: <br/>
+    <p>In each round, both players draw one card at random. You will then be told:</p>
+    <ul>
+      <li>which cards the players drew, and</li>
+      <li>one sentence from Yoda, who knows the contents of both decks, explaining who won and why.</li>
+    </ul>
 
-which cards the players drew, and <br/>
+    <p><strong>Please answer according to your own judgment.</strong> There are no right or wrong answers.</p>
 
-one sentence from a Reporter, who knows all 20 cards, that explains who won and why. <br/><br/>
+    <p>Here is a short demo video of how the game is played:</p>
+    <video
+      ref="video"
+      controls
+      preload="metadata"
+      playsinline
+      style="max-width: 800px; width: 100%; border-radius: 8px;"
+    >
+      <!-- Offer multiple formats; browser picks one it supports -->
+      <source src="https://aidayg24.github.io/causal_selection/videos/slideshow.webm" type="video/webm">
+      <source src="https://aidayg24.github.io/causal_selection/videos/slideshow.mp4"  type="video/mp4">
+    </video>
 
-<strong>Your task: Based on the report, estimate how many of each emoji are in each player’s deck.</strong> <br/><br/>
+    <p>Let’s get started!</p>
+  </InstructionScreen>
 
-<strong>Please answer according to your own judgment.</strong>
-There are no right or wrong answers. <br/><br/>
-
-Let’s get started!
-</InstructionScreen>
 <!-- switched to experiment 2 because I think it is more informative -->
 <!-- Q1, 2 point for win, superpower is the cause -->
   <Screen>
   
     <Slide>
-        <p>Look at the image below to see the rules and the report.</p>
-        <img src="https://aidayg24.github.io/causal_selection/images/main/InstrumentRule.jpg" alt="2 point Rule">
+      <img src="https://aidayg24.github.io/causal_selection/images/main/instrumentRule.jpg" alt="2 point Rule">
     
-    <img src="https://aidayg24.github.io/causal_selection/images/main/instrumentPlay.jpg" alt="player A cause win game">
+      <img src="https://aidayg24.github.io/causal_selection/images/main/instrumentPlay.jpg" alt="player A cause win game">
 
         <p><strong>1. How many violin cards does Alice have?</strong></p>
         <RatingInput
@@ -138,10 +153,9 @@ Let’s get started!
   <Screen>
   
     <Slide>
-        <p>Look at the image below to see the rules and the report.</p>
-        <img src="https://aidayg24.github.io/causal_selection/images/main/superpowerRule.jpg" alt="2 point Rule">
+      <img src="https://aidayg24.github.io/causal_selection/images/main/superpowerRule.jpg" alt="2 point Rule">
     
-    <img src="https://aidayg24.github.io/causal_selection/images/main/superpowerPlay.jpg" alt="player B cause win game">
+      <img src="https://aidayg24.github.io/causal_selection/images/main/superpowerPlay.jpg" alt="player B cause win game">
        
         <p><strong>1. How many superpower cards does Charlie have?</strong></p>
         <RatingInput
@@ -163,12 +177,10 @@ Let’s get started!
 
 <!-- Q3, 2 point for win, lost, superpower is the cause -->
   <Screen>
-  
     <Slide>
-        <p>Look at the image below to see the rules and the report.</p>
-        <img src="https://aidayg24.github.io/causal_selection/images/main/studyRule.jpg" alt="2 point Rule">
+      <img src="https://aidayg24.github.io/causal_selection/images/main/studyRule.jpg" alt="2 point Rule">
     
-    <img src="https://aidayg24.github.io/causal_selection/images/main/studyPlay.jpg" alt="player A cause lost game">
+      <img src="https://aidayg24.github.io/causal_selection/images/main/studyPlay.jpg" alt="player A cause lost game">
 
         <p><strong>1.  How many history cards does Eli have?</strong></p>
         <RatingInput
@@ -190,12 +202,10 @@ Let’s get started!
 
 <!-- Q4, 2 point for win,lost, drink is the cause -->
   <Screen>
-  
     <Slide>
-        <p>Look at the image below to see the rules and the report.</p>
-        <img src="https://aidayg24.github.io/causal_selection/images/main/gameRule.jpg" alt="2 point Rule">
+      <img src="https://aidayg24.github.io/causal_selection/images/main/gameRule.jpg" alt="2 point Rule">
     
-    <img src="https://aidayg24.github.io/causal_selection/images/main/gamePlay.jpg" alt="player B caused lost  game">
+      <img src="https://aidayg24.github.io/causal_selection/images/main/gamePlay.jpg" alt="player B caused lost  game">
         <p><strong>1.  How many party cards does Mia have?</strong></p>
         <RatingInput
           :count="10"
@@ -218,10 +228,9 @@ Let’s get started!
   <Screen>
   
     <Slide>
-        <p>Look at the image below to see the rules and the report.</p>
         <img src="https://aidayg24.github.io/causal_selection/images/main/drugRule.jpg" alt="1 point Rule">
     
-    <img src="https://aidayg24.github.io/causal_selection/images/main/drugPlay.jpg" alt="player B cause win game">
+        <img src="https://aidayg24.github.io/causal_selection/images/main/drugPlay.jpg" alt="player B cause win game">
         <p><strong>1.  How many pill cards does Zoe have?</strong></p>
         <RatingInput
           :count="10"
@@ -244,10 +253,9 @@ Let’s get started!
   <Screen>
   
     <Slide>
-        <p>Look at the image below to see the rules and the report.</p>
         <img src="https://aidayg24.github.io/causal_selection/images/main/matrixRule.jpg" alt="1 point Rule">
     
-    <img src="https://aidayg24.github.io/causal_selection/images/main/matrixPlay.jpg" alt="player A caused win game">
+        <img src="https://aidayg24.github.io/causal_selection/images/main/matrixPlay.jpg" alt="player A caused win game">
         <p><strong>1.  How many red pill cards does Neo have?</strong></p>
         <RatingInput
           :count="10"
@@ -269,10 +277,9 @@ Let’s get started!
   <Screen>
   
     <Slide>
-        <p>Look at the image below to see the rules and the report.</p>
         <img src="https://aidayg24.github.io/causal_selection/images/main/foodRule.jpg" alt="1 point Rule">
     
-    <img src="https://aidayg24.github.io/causal_selection/images/main/foodPlay.jpg" alt="player A cause lost game">
+        <img src="https://aidayg24.github.io/causal_selection/images/main/foodPlay.jpg" alt="player A cause lost game">
         <p><strong>1. How many salad cards does Ben have?</strong></p>
         <RatingInput
           :count="10"
@@ -294,10 +301,9 @@ Let’s get started!
   <Screen>
   
     <Slide>
-        <p>Look at the image below to see the rules and the report.</p>
         <img src="https://aidayg24.github.io/causal_selection/images/main/superheroRule.jpg" alt="1 point Rule">
     
-    <img src="https://aidayg24.github.io/causal_selection/images/main/superheroPlay.jpg" alt="player B cause lost game">
+        <img src="https://aidayg24.github.io/causal_selection/images/main/superheroPlay.jpg" alt="player B cause lost game">
         <p><strong>1.  How many spiderman cards does Leo have?</strong></p>
         <RatingInput
           :count="10"
