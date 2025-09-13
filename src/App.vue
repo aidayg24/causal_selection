@@ -1,387 +1,233 @@
 <template>
-  <Experiment title="magpie demo">
-    <!-- <InstructionScreen :title="'Welcome'">
-  <p><strong>Welcome, and thank you for participating!</strong><br/>
-  This experiment will take about <strong>20 minutes</strong> to complete.</p>
-
-  <p>In this experiment, you will read about games between two players</p>
-
-  <ul>
-    <li>Each player can make certain moves.</li>
-    <li>Depending on their moves, <strong>points are awarded</strong> </li>
-    <li>Each game also has a <strong>win rule</strong>, which tells us how a player can win.</li>
-  </ul>
-
-  <p>You will be shown:</p>
-  <ol>
-    <li>The rules of the game </li>
-    <li>What moves the players made</li>
-    <li>The resulting points and outcome</li>
-  </ol>
-
-  <p>Based on this information, you will be asked to <strong>make judgments</strong> about the game.</p>
-
-  <p>Before the main experiment begins, you will complete <strong>3 practice questions</strong> 
-  to get familiar with the rules.</p>
-
-  <p>👉 Click <strong>Next</strong> to start the trial questions!</p>
-    </InstructionScreen> -->
-
-<!-- , trial -->
-<!-- <Screen>
-  <p>
-    Alice and Bob are playing a small game. Both have two cards and they can pick one of them. In the image below you can see the points for each move:<br/>
-    <img src="https://aidayg24.github.io/causal_selection/images/training/2point.jpg" alt="2 point Rule">
-    <strong>If in the game they played the following: </strong>
-    <img src="https://aidayg24.github.io/causal_selection/images/training/yellow_tail.jpg" alt="yellow tail game">
-  </p>
-  <ForcedChoiceScreen
-        :options="['Alice', 'Bob', 'No one']"
-        question="Who will win?"
-        :feedbackTime="2000" >
-
-  <template #feedback>
-        <p v-if="$magpie.measurements.response === 'No one'">Correct! let's go to next one.</p>
-        <p v-else>Incorrect, Alice has 1 point and Bob too, but for winning they need exactly 2 points.</p>
-    </template>
-      
-  </ForcedChoiceScreen>
-</Screen> -->
-
-<!-- <Screen>
-  <p>
-    Still the same game as previouse one;<br/>
-    <img src="https://aidayg24.github.io/causal_selection/images/training/2point.jpg" alt="2 point Rule">
-    <strong>If in the game they played the following: </strong>
-    <img src="https://aidayg24.github.io/causal_selection/images/training/yellow_head.jpg" alt="yellow head game">
-  </p>
-  <ForcedChoiceScreen
-        :options="['Alice', 'Bob', 'No one']"
-        question="Who will win?"
-        :feedbackTime="2000" >
-
-  <template #feedback>
-        <p v-if="$magpie.measurements.response === 'Alice'">Correct! let's go to next one.</p>
-        <p v-else>Incorrect, Alice has 2 point and Bob 0, and for winning they need exactly 2 points.</p>
-    </template>
-      
-  </ForcedChoiceScreen>
-</Screen> -->
-
-<!-- <Screen>
-  <p>
-    Now, a small change in the rules;<br/>
-    <img src="https://aidayg24.github.io/causal_selection/images/training/atleast1point.jpg" alt="1 point Rule">
-    <strong>If in the game they played the following: </strong>
-    <img src="https://aidayg24.github.io/causal_selection/images/training/red_tail.jpg" alt="red tail game">
-  </p>
-  <ForcedChoiceScreen
-        :options="['Alice', 'Bob', 'No one']"
-        question="Who will win?"
-        :feedbackTime="2000" >
-
-  <template #feedback>
-        <p v-if="$magpie.measurements.response === 'Bob'">Correct!</p>
-        <p v-else>Incorrect, Alice has 0 point and Bob 2, and for winning they need at least 1 point.</p>
-    </template>
-      
-  </ForcedChoiceScreen>
-</Screen> -->
-
-  <InstructionScreen :title="'Instructions'">
-    <p><strong>Welcome, and thank you for participating!</strong><br>
-      This experiment will take about <strong>20 minutes</strong> to complete.
-    </p>
-
-    <p>In this experiment, two players take part in a <em>Card Game</em>.
-      Each player has a deck of 10 cards. Each deck contains only two types of
-      emoji cards, and the cards are hidden. The exact number of each type is
-      unknown to the players.
-    </p>
-
-    <p>In each round, both players draw one card at random. You will then be told:</p>
-    <ul>
-      <li>which cards the players drew, and</li>
-      <li>one sentence from Yoda, who knows the contents of both decks, explaining who won and why.</li>
-    </ul>
-
-    <p><strong>Please answer according to your own judgment.</strong> There are no right or wrong answers.</p>
-
-    <p>Here is a short demo video of how the game is played:</p>
-    <video
-      ref="video"
-      controls
-      preload="metadata"
-      playsinline
-      style="max-width: 800px; width: 100%; border-radius: 8px;"
-    >
-      <!-- Offer multiple formats; browser picks one it supports -->
-      <source src="https://aidayg24.github.io/causal_selection/videos/slideshow.webm" type="video/webm">
-      <source src="https://aidayg24.github.io/causal_selection/videos/slideshow.mp4"  type="video/mp4">
-    </video>
-
-    <p>Let’s get started!</p>
-  </InstructionScreen>
-
-<!-- switched to experiment 2 because I think it is more informative -->
-<!-- Q1, 2 point for win, superpower is the cause -->
-  <Screen>
+  <Experiment title="Experiment">
   
-    <Slide>
-      <img src="https://aidayg24.github.io/causal_selection/images/main/instrumentRule.jpg" alt="2 point Rule">
-    
-      <img src="https://aidayg24.github.io/causal_selection/images/main/instrumentPlay.jpg" alt="player A cause win game">
+    <InstructionScreen :title="'Instructions'">
+      <p><strong>Welcome, and thank you for participating!</strong></p>
 
-        <p><strong>1. How many violin cards does Alice have?</strong></p>
-        <RatingInput
-          :count="10"
-          :response.sync="$magpie.measurements.ANorm"
-        />
+      <p>
+        In this experiment, you will answer questions about the outcome of an
+        <em>"Icon Card Game"</em>. In this game, there are <strong>two players</strong>.
+        Each player has a <strong>deck of 10 cards</strong>. Each deck is made up of
+        only two types of icons. Each player has a <strong>different pair of icons</strong>
+        in their deck. The exact number of each type of icon in both decks is
+        <strong>unknown to the players</strong>.
+      </p>
 
-        <p><strong> 2. How many guitar cards does Max have?</strong></p>
-        <RatingInput
-          :count="10"
-        :response.sync="$magpie.measurements.BNorm"
-        />
-       
-        <button @click="$magpie.saveAndNextScreen()">Next Report</button>
-       
-    </Slide>
-</Screen>
+      <img src="https://aidayg24.github.io/causal_selection/images/instruction/icons.jpg" alt="cards and icons">
 
-<!-- Q2, 2 point for win, drink is the cause -->
-  <Screen>
-  
-    <Slide>
-      <img src="https://aidayg24.github.io/causal_selection/images/main/superpowerRule.jpg" alt="2 point Rule">
-    
-      <img src="https://aidayg24.github.io/causal_selection/images/main/superpowerPlay.jpg" alt="player B cause win game">
-       
-        <p><strong>1. How many superpower cards does Charlie have?</strong></p>
-        <RatingInput
-          :count="10"
-          :response.sync="$magpie.measurements.ANorm"
-        />
+    </InstructionScreen>
 
-        <p><strong> 2. How many beer cards does Bob have?</strong></p>
-        <RatingInput
-          :count="10"
-        :response.sync="$magpie.measurements.BNorm"
-        />
-       
-        <button @click="$magpie.saveAndNextScreen()">Next Report</button>
-       
-    </Slide>
-</Screen>
+    <InstructionScreen :title="'Instructions'">
+      <p>
+        Each card is worth one point, and the explanation under the icon shows which
+        player gets the point if that card is drawn.
+      </p>
+      <img src="https://aidayg24.github.io/causal_selection/images/instruction/points.jpg" alt="points">
 
+    </InstructionScreen>
 
-<!-- Q3, 2 point for win, lost, superpower is the cause -->
-  <Screen>
-    <Slide>
-      <img src="https://aidayg24.github.io/causal_selection/images/main/studyRule.jpg" alt="2 point Rule">
-    
-      <img src="https://aidayg24.github.io/causal_selection/images/main/studyPlay.jpg" alt="player A cause lost game">
+    <InstructionScreen :title="'Instructions'">
+      <p>Each game has its own winning condition based on points.</p>
+      <img src="https://aidayg24.github.io/causal_selection/images/instruction/winningRule.jpg" alt="winning rule">
 
-        <p><strong>1.  How many history cards does Eli have?</strong></p>
-        <RatingInput
-          :count="10"
-          :response.sync="$magpie.measurements.ANorm"
-        />
+    </InstructionScreen>
 
-        <p><strong> 2. How many biology cards does Nana have?</strong></p>
-        <RatingInput
-          :count="10"
-        :response.sync="$magpie.measurements.BNorm"
-        />
-       
-        <button @click="$magpie.saveAndNextScreen()">Next Report</button>
-       
-    </Slide>
-</Screen>
+    <InstructionScreen :title="'Instructions'">
+      <p>In the game, both players draw one card at random from their own deck. You will then be told:
+      <ul>
+        <li>which cards the players drew, and</li>
+        <li>each player's point</li>
+      </ul>
+      </p>
 
+      <img src="https://aidayg24.github.io/causal_selection/images/instruction/play.jpg" alt="play">
 
-<!-- Q4, 2 point for win,lost, drink is the cause -->
-  <Screen>
-    <Slide>
-      <img src="https://aidayg24.github.io/causal_selection/images/main/gameRule.jpg" alt="2 point Rule">
-    
-      <img src="https://aidayg24.github.io/causal_selection/images/main/gamePlay.jpg" alt="player B caused lost  game">
-        <p><strong>1.  How many party cards does Mia have?</strong></p>
-        <RatingInput
-          :count="10"
-          :response.sync="$magpie.measurements.ANorm"
-        />
+    </InstructionScreen>
 
-        <p><strong> 2. How many study cards does Bob have?</strong></p>
-        <RatingInput
-          :count="10"
-        :response.sync="$magpie.measurements.BNorm"
-        />
-       
-        <button @click="$magpie.saveAndNextScreen()">Next Report</button>
-       
-    </Slide>
-</Screen>
+    <InstructionScreen :title="'Instructions'">
+      <p>After the game, Yoda, <strong><em>who knows the exact number of each icon in every deck,</em></strong> makes a statement about the game.
+      <br/> Your task is to answer some questions about the game, based on Yoda's knowledge and the statement, 
+      and the winning rule of the game<br/>
+      <p><strong>Please answer according to your own judgment.</strong> There are no right or wrong answers.</p>
+      <p>
+        Before we start the experiment, let’s do some quick warm-up questions to
+        ensure the instructions are clear.
+      </p>
 
+      </p>
 
-<!-- Q5, at least 1 point for win, superpower is the cause -->
-  <Screen>
-  
-    <Slide>
-        <img src="https://aidayg24.github.io/causal_selection/images/main/drugRule.jpg" alt="1 point Rule">
-    
-        <img src="https://aidayg24.github.io/causal_selection/images/main/drugPlay.jpg" alt="player B cause win game">
-        <p><strong>1.  How many pill cards does Zoe have?</strong></p>
-        <RatingInput
-          :count="10"
-          :response.sync="$magpie.measurements.ANorm"
-        />
+      <img src="https://aidayg24.github.io/causal_selection/images/instruction/Yoda.jpg" alt="Yoda">
 
-        <p><strong> 2. How many beer cards does Tom have?</strong></p>
-        <RatingInput
-          :count="10"
-        :response.sync="$magpie.measurements.BNorm"
-        />
-       
-        <button @click="$magpie.saveAndNextScreen()">Next Report</button>
-       
-    </Slide>
-</Screen>
+    </InstructionScreen>
 
+    <!-- warm-up knowledge check -->
+    <Screen>
+      <p>Does Alice know how many violin cards she has and which cards are violin in her deck?</p>
+      <img src="https://aidayg24.github.io/causal_selection/images/instruction/icons.jpg" alt="cards and icons">
 
-<!-- Q6, at least 1 point for win, drink is the cause -->
-  <Screen>
-  
-    <Slide>
-        <img src="https://aidayg24.github.io/causal_selection/images/main/matrixRule.jpg" alt="1 point Rule">
-    
-        <img src="https://aidayg24.github.io/causal_selection/images/main/matrixPlay.jpg" alt="player A caused win game">
-        <p><strong>1.  How many red pill cards does Neo have?</strong></p>
-        <RatingInput
-          :count="10"
-          :response.sync="$magpie.measurements.ANorm"
-        />
+      <ForcedChoiceScreen
+          :options="['Yes', 'No', 'I am not sure']" 
+          :feedbackTime="-1">
 
-        <p><strong> 2. How many eat cards does Alice have?</strong></p>
-        <RatingInput
-          :count="10"
-        :response.sync="$magpie.measurements.BNorm"
-        />
-       
-        <button @click="$magpie.saveAndNextScreen()">Next Report</button>
-       
-    </Slide>
-</Screen>
+        <template #feedback>
+          <p v-if="$magpie.measurements.response === 'No'" class="feedback correct">
+            Correct!<br>
+          </p>
+          <p v-else class="feedback incorrect">
+            Incorrect!<br>
+            <p>
+              The exact number of each type of icon in both decks is
+              <strong>unknown to the players</strong>.<br>
+              <span> Let's go to the next one.</span>
+            </p>
+          </p>
+          <button @click="$magpie.saveAndNextScreen()">Ok</button>
+        </template>
 
-<!-- Q7, at least 1 point for win, lost,superpower is the cause -->
-  <Screen>
-  
-    <Slide>
-        <img src="https://aidayg24.github.io/causal_selection/images/main/foodRule.jpg" alt="1 point Rule">
-    
-        <img src="https://aidayg24.github.io/causal_selection/images/main/foodPlay.jpg" alt="player A cause lost game">
-        <p><strong>1. How many salad cards does Ben have?</strong></p>
-        <RatingInput
-          :count="10"
-          :response.sync="$magpie.measurements.ANorm"
-        />
+      </ForcedChoiceScreen>
+    </Screen>
 
-        <p><strong> 2. How many popcorn cards does Lia have?</strong></p>
-        <RatingInput
-          :count="10"
-        :response.sync="$magpie.measurements.BNorm"
-        />
-       
-        <button @click="$magpie.saveAndNextScreen()">Next Report</button>
-       
-    </Slide>
-</Screen>
+    <Screen>
+      <p>Is it possible that Max draws a violin card from his deck?</p>
+      <img src="https://aidayg24.github.io/causal_selection/images/instruction/icons.jpg" alt="cards and icons">
 
-<!-- Q8, at least 1 point for win, lost,drunk is the cause -->
-  <Screen>
-  
-    <Slide>
-        <img src="https://aidayg24.github.io/causal_selection/images/main/superheroRule.jpg" alt="1 point Rule">
-    
-        <img src="https://aidayg24.github.io/causal_selection/images/main/superheroPlay.jpg" alt="player B cause lost game">
-        <p><strong>1.  How many spiderman cards does Leo have?</strong></p>
-        <RatingInput
-          :count="10"
-          :response.sync="$magpie.measurements.ANorm"
-        />
+      <ForcedChoiceScreen
+          :options="['Yes', 'No', 'I am not sure']"
+          :feedbackTime="-1" >
 
-        <p><strong> 2. How many joker cards does Sam have?</strong></p>
-        <RatingInput
-          :count="10"
-        :response.sync="$magpie.measurements.BNorm"
-        />
-       
-        <button @click="$magpie.saveAndNextScreen()">Next Report</button>
-       
-    </Slide>
-</Screen>
+        <template #feedback>
+          <p v-if="$magpie.measurements.response === 'No'" class="feedback correct">
+            Correct!<br/>
+          </p>
+          <p v-else class="feedback incorrect">
+            Incorrect!<br>
+            <p>
+              Each deck is made up of
+              only two types of icons. Each player has a <strong>different pair of icons</strong>
+              in their deck.<br>
+            <span> Let's go to the next one.</span>
+            </p>
+          </p>
+          <button @click="$magpie.saveAndNextScreen()">Ok</button>
+        </template>
 
-<InstructionScreen :title="'Instructions'">
-  Now the game center has created a new game with new players and new rules! <br/><br/>
+      </ForcedChoiceScreen>
+    </Screen>
 
-In this game, each player builds their own deck of 10 cards. They must always choose 2 cards of one emoji and 8 cards of the other emoji. No other combinations are allowed. <br/><br/>
+    <Screen>
+      <p>Here, can Alice win if she draws a saxophone card?</p>
+      <img src="https://aidayg24.github.io/causal_selection/images/instruction/winningRule.jpg" alt="winning rule">
 
-After the players set their decks, the cards are shuffled. Then a Judge, who does not know how the decks are divided, decides the point system. The Judge chooses which emoji will give points and which will not. <br/><br/>
+      <ForcedChoiceScreen
+          :options="['Yes', 'No', 'I am not sure']" 
+          :feedbackTime="-1">
 
-Once this is done, each player flips one card. <br/><br/>
+        <template #feedback>
+          <p v-if="$magpie.measurements.response === 'No'" class="feedback correct">
+            Correct!<br/>
+          </p>
+          <p v-else class="feedback incorrect">
+            Incorrect!<br>
+            <p>
+              To win, Alice needs exactly two points.<br/>
+              A saxophone card gives Max 1 point and does not give any points to Alice.<br/>
+              Even if Max draws a guitar card, it will only give one point to Alice, and she still cannot win.
+              <br>
+              <span> Let's go to the next one.</span>
+            </p>
+          </p>
+          <button @click="$magpie.saveAndNextScreen()">Ok</button>
+        </template>
+      </ForcedChoiceScreen>
+    </Screen>
 
-<strong>Your task: Based on what happens in the play, answer the questions that follow.</strong> <br/><br/>
+    <Screen>
+      <p>Does Yoda know how many guitar cards Max has in his deck?</p>
+      <ForcedChoiceScreen
+          :options="['Yes', 'No', 'I am not sure']"
+          :feedbackTime="-1" >
 
-Let’s go!
-</InstructionScreen>
-<Screen>
-  
-    <Slide>
-        <p>Look at the image below to see the decks and the judge's point destribution and the play.</p>
-        <img src="https://aidayg24.github.io/causal_selection/images/main/secondExRule.jpg" alt="1 point Rule">
-    
-    <img src="https://aidayg24.github.io/causal_selection/images/main/secondExPlay.jpg" alt="player B cause lost game">
-        <p><strong>Felix lost because: </strong></p>
+        <template #feedback>
+          <p v-if="$magpie.measurements.response === 'Yes'" class="feedback correct">
+            Correct!
+          </p>
+          <p v-else class="feedback incorrect">
+            Incorrect!<br>
+            <p>
+              <strong>Yoda knows the exact number of each icon in every deck.</strong> 
+              <br/>
+              <span> Let's start the experiment!</span>
+            </p>
+          </p>
+          <button @click="$magpie.saveAndNextScreen()">Ok</button>
+        </template>
+      </ForcedChoiceScreen>
+    </Screen>
+
+    <!-- main experiment -->
+    <template v-for="(t, i) in trialsShuffled">
+      <Screen :key="i">
         <Slide>
-        <MultipleChoiceMatrixInput
-            :options="['Strongly disagree', 'Disagree', 'Neutral', 'Agree', 'Strongly agree']"
-            :questions="[
-              'He chose a bad mix of cards for his deck',
-              'He turned over the Spider-Man card',
-              'Carla chose a good mix of cards for her deck',
-              'Carla turned over the Joker card',
-              'The Judge gave points in a certain way'
-            ]"
-            :randomize="true"
-            :responses.sync= "$magpie.measurements.responses"
-        />
-      </Slide>
-        
-       
-        <button @click="$magpie.saveAndNextScreen()">Next Report</button>
-       
-    </Slide>
-</Screen>
+          <img :src="t.playImg" alt="play image" />
+          <img :src="t.yodaImg" alt="Yoda image" />
+
+          <p><strong><em>
+            Given the rules of the game, the players’ uncertainty about the proportion of each icon in their decks, and what Yoda said:
+          </em></strong></p>
+
+          <p><strong>{{ t.q1 }}</strong></p>
+          <RatingInput :count="10" :response.sync="$magpie.measurements.ANorm" />
+
+          <p><strong>{{ t.q2 }}</strong></p>
+          <RatingInput :count="10" :response.sync="$magpie.measurements.BNorm" />
+
+          <button :disabled="!$magpie.measurements.ANorm || !$magpie.measurements.BNorm"
+          @click="$magpie.saveAndNextScreen()">Next</button>
+        </Slide>
+      </Screen>
+    </template>
 
 
-<PostTestScreen />
+    <PostTestScreen />
     <SubmitResultsScreen />
   </Experiment>
 </template>
 
+<style scoped>
+  button:disabled {
+    background-color: #ccc;   /* gray background */
+    color: #666;              /* dimmed text */
+    cursor: not-allowed;      /* "forbidden" cursor */
+    opacity: 0.6;             /* slightly transparent */
+  }
+  .feedback {
+    font-weight: bold;
+    text-align: center;
+    margin: 1em 0;
+  }
+
+  .feedback.correct {
+    color: green;
+    font-size: 2em; /* super big */
+  }
+
+  .feedback.incorrect {
+    color: red;
+    font-size: 2em; /* super big */
+  }
+</style>
+
+
 <script>
 import _ from 'lodash';
+import trials from './trials.js';
 
 export default {
-  name: 'App',
+  name: "App",
   data() {
-    return {};
-  },
-  computed: {
-    // Expose lodash to template code
-    _() {
-      return _;
-    }
+    return {
+      trialsShuffled: _.shuffle(trials)
+    };
   }
 };
 </script>
