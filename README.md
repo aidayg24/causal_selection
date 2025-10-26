@@ -19,13 +19,16 @@ The project includes two main parts:
 ---
 
 ## 📊 Repository Structure
+
+```text
 .
-├── data collection and data analysis/ # Raw and cleaned data from the experiment and R programs for analysis
-├── src/ # Experiment codes and resources
-├── public/images # images used in the experiment
-├── The Effect of Valence Framing on Inferring Cause Normalities.pdf # Thesis pdf (soon to be uploaded)
-├── *rest # dependencies for building the experiment
-└── README.md # This file
+├── data collection and data analysis/    # Raw and cleaned data from the experiment and R programs for analysis
+├── src/                                  # Experiment code and resources
+├── public/images                         # Images used in the experiment
+├── The Effect of Valence Framing on Inferring Cause Normalities.pdf   # Thesis PDF (soon to be uploaded)
+├── *rest                                 # Dependencies for building the experiment
+└── README.md                             # This file
+
 
 
 ---
@@ -48,7 +51,8 @@ All analyses were performed in **R** (version 3.5.0), primarily using the follow
 - [`ggplot2`](https://ggplot2.tidyverse.org/) – plotting  
 - [`bayesplot`](https://mc-stan.org/bayesplot/) – posterior checks and diagnostics  
 
-The core analysis scripts are located in the [`/data collection and data analysis/`](./data collection and data analysis) folder.  
+The core analysis scripts are located in the [/data collection and data analysis/](./data%20collection%20and%20data%20analysis) folder.
+
 Each model and plot corresponds to the results presented in **Chapter 4** of the thesis.
 
 
