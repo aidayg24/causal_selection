@@ -1,27 +1,61 @@
-# causal-selection
+# 🧠 The Effect of Valence Framing on Inferring Causal Normalities
 
-This is a sample experiment using magpie.
-### Setup
+This repository contains all materials, data, and analysis scripts for my bachelor’s thesis:  
+**“The Effect of Valence Framing on Inferring Causal Normalities”**  
+completed at the **University of Tübingen** under the supervision of **Prof. Dr. Michael Franke**.
 
-First, set up the project with `npm install`
+---
 
-To run the project locally, run `npm run serve`
+## 📄 Overview
 
-To build the project for deployment (e.g. to Netlify), run `npm run build`
+This study investigates how **event normality**, **causal structure**, and **valence framing** influence people’s causal judgments.  
+Building on the framework by *Kirfel & Icard (2021)*, it tests whether outcome valence (positive vs. negative) affects how people **select** or **interpret** causes in **conjunctive** and **disjunctive** causal structures.
 
-If you are hosting this repository on github, the project will automatically be built and deployed to the gh-pages branch, so you only have to enable Github Pages in your repository settings to publish your project.
+The project includes two main parts:
 
-For more information, see the [manual](https://magpie-experiments.org/).
-### Coding style
+- 🗣 **Speaker Task** – participants chose which cause best explained an outcome  
+- 👂 **Listener Task** – participants inferred how normal each event was, given an explanation
 
-To automatically fix coding style and format the code (linting) run `npm run lint` and `npm run lint:style`
+---
 
-## How to update magpie
+## 📊 Repository Structure
+.
+├── data collection and data analysis/ # Raw and cleaned data from the experiment and R programs for analysis
+├── src/ # Experiment codes and resources
+├── public/images # images used in the experiment
+├── The Effect of Valence Framing on Inferring Cause Normalities.pdf # Thesis pdf (soon to be uploaded)
+├── *rest # dependencies for building the experiment
+└── README.md # This file
 
-```sh
-$ cd your-project
-$ npm update magpie-base
-```
 
-Read more on [maintaining npm dependencies](https://www.carlrippon.com/upgrading-npm-dependencies/).
+---
+
+## 🧩 Experiment
+
+The interactive online version of the experiment can be accessed here:  
+👉 [**aidayg24.github.io/causal_selection**](https://aidayg24.github.io/causal_selection)
+
+The experiment was built using **Vue**, and **magpie**,  with data collection conducted via **Prolific**.
+
+---
+
+## 🧮 Data Analysis
+
+All analyses were performed in **R** (version 3.5.0), primarily using the following packages:
+
+- [`brms`](https://paul-buerkner.github.io/brms/) – hierarchical Bayesian logistic regression  
+- [`tidyverse`](https://www.tidyverse.org/) – data wrangling and visualization  
+- [`ggplot2`](https://ggplot2.tidyverse.org/) – plotting  
+- [`bayesplot`](https://mc-stan.org/bayesplot/) – posterior checks and diagnostics  
+
+The core analysis scripts are located in the [`/data collection and data analysis/`](./data collection and data analysis) folder.  
+Each model and plot corresponds to the results presented in **Chapter 4** of the thesis.
+
+
+---
+
+## 💬 Contact
+
+For questions or collaboration inquiries, feel free to contact me via GitHub or email:  
+📧 **aidayg24@gmail.com**
 
