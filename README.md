@@ -57,6 +57,15 @@ Each model and plot corresponds to the results presented in **Chapter 4** of the
 
 
 ---
+## License
+
+The code in this repository is licensed under the MIT License.
+
+The thesis document (`Effect of valence framing on inferring cause normalities.pdf`) is licensed under
+Creative Commons Attribution 4.0 International (CC BY 4.0),
+unless stated otherwise.
+
+---
 
 ## 💬 Contact
 
